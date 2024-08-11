@@ -1,10 +1,78 @@
+.body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0b363f;
+}
+
 .container {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .title {
-    color: #0070f3;
-    font-size: 24px;
-  }
+  background-color: #F4F4F4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.title {
+  color: #0070f3;
+  font-size: 24px;
+}
+
+.header {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+.headerContent {
+  z-index: 3;
+  text-align: center;
+}
+
+.headerTXT h1 {
+  font-size: 45px;
+  line-height: 60px;
+  color: #434b4d;
+  font-weight: 500;
+  margin-bottom: 35px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.inputGroup label {
+  color: #007ba7;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.inputGroup .inputField {
+  width: 100%;
+  max-width: 300px;
+  padding: 8px;
+  border-radius: 7px;
+  border: 1px solid #cbd5e0;
+  font-size: 1rem;
+}
+
+.inputGroup .inputField:focus {
+  outline: none;
+  border-color: #3182ce;
+}
+
+.inputGroup .inputField::placeholder {
+  color: #a0aec0;
+}
+
+.containerK {
+  color: #354f52;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
