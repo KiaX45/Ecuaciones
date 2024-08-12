@@ -110,5 +110,6 @@
   .containerGrafica canvas,
   .containerGrafica svg {
     max-width: 100%;
+    min-width: 100px;
   }
 }
