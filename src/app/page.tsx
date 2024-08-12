@@ -106,50 +106,50 @@ export default function Home(): JSX.Element {
       <div className={styles.container}>
 
         <div className={styles.inputGroup}>
-          <label htmlFor="T_inicial">Temperatura inicial (C°)</label>
+          <label htmlFor="T_inicial">Temperatura inicial (°C)</label>
           <input
             type="number"
             id="T_inicial"
             value={inputValues.T_inicial}
             onChange={handleSubmit}
             className={styles.inputField}
-            placeholder='Temperatura inicial C°'
+            placeholder='Temperatura inicial °C'
           />
         </div>
 
         <div className={styles.inputGroup}>
-          <label htmlFor="T_ambiente">Temperatura ambiente (C°)</label>
+          <label htmlFor="T_ambiente">Temperatura ambiente (°C)</label>
           <input
             type="number"
             id="T_ambiente"
             value={inputValues.T_ambiente}
             onChange={handleSubmit}
             className={styles.inputField}
-            placeholder='Temperatura ambiente C°'
+            placeholder='Temperatura ambiente °C'
           />
         </div>
 
         <div className={styles.inputGroup}>
-          <label htmlFor="T_segura">Temperatura segura (C°)</label>
+          <label htmlFor="T_segura">Temperatura segura (°C)</label>
           <input
             type="number"
             id="T_segura"
             value={inputValues.T_segura}
             onChange={handleSubmit}
             className={styles.inputField}
-            placeholder='Temperatura segura C°'
+            placeholder='Temperatura segura °C'
           />
         </div>
 
         <div className={styles.inputGroup}>
-          <label htmlFor="T_comparacion">Temperatura de comparación (C°)</label>
+          <label htmlFor="T_comparacion">Temperatura de comparación (°C)</label>
           <input
             type="number"
             id="T_comparacion"
             value={inputValues.T_comparacion}
             onChange={handleSubmit}
             className={styles.inputField}
-            placeholder='Temperatura de comparación C°'
+            placeholder='Temperatura de comparación °C'
           />
         </div>
 
@@ -168,9 +168,20 @@ export default function Home(): JSX.Element {
         <div className={styles.containerK}>
           <h2>Valor aproximado de k es: {inputValues.k.toFixed(5)}</h2>
         </div>
-        <CoolingChart {...chartData} />
 
-        <div className={styles.containerK}>
+        <div className={styles.containerResultado}>
+          {chartData.tiempoSeguro === undefined ? (
+            <p>El servidor no alcanza la temperatura segura de {inputValues.T_segura}°C.</p>
+          ) : (
+            <p>El servidor alcanza la temperatura segura de {inputValues.T_segura}°C después de {chartData.tiempoSeguro.toFixed(2)} minutos.</p>
+          )}
+        </div>
+
+        <div className={styles.containerGrafica}>
+          <CoolingChart {...chartData} />
+        </div>
+
+        <div className={styles.containerResultado}>
           {chartData.tiempoSeguro === undefined ? (
             <p>El servidor no alcanza la temperatura segura de {inputValues.T_segura}°C.</p>
           ) : (
